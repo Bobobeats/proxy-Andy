@@ -5,9 +5,9 @@ const path = require('path');
 const port = 3420;
 const app = express();
 
-const commentsIp = 'http://18.237.91.1:4001';
-const playerIp = 'http://34.217.131.190:3002';
-const relatedTracksIp = 'http://52.10.168.93:1000';
+const commentsIp = 'http://44.233.138.125:4001';
+const playerIp = 'http://44.232.36.205:3002';
+const relatedTracksIp = 'http://44.226.147.90:1000';
 
 app.get('/player_bundle', (req, res) => {
   axios.get(`${playerIp}/player_bundle`)
