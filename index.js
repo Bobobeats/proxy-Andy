@@ -62,7 +62,7 @@ app.get('/api/comments/songs/:songId', (req, res, next) => {
   let { page, limit, join } = req.query;
   const { songId } = req.params;
   limit = Number(limit);
-  const request = `${commentsIP}/api/songs/${songId}?page=${page}&limit=${limit}&join=false`;
+  const request = `${commentsIp}/api/songs/${songId}?page=${page}&limit=${limit}&join=false`;
   axios
     .get(request)
     .then((response) => {
