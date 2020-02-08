@@ -58,15 +58,22 @@ app.get('/comments_bundle', (req, res) => {
   })
 })
 
-app.get('/api/comments/songs/:songId', (req, res) => {
+app.get('/api/comments/songs/:songId', (req, res, next) => {
+  let { page, limit, join } = req.query;
   const { songId } = req.params;
-  axios.get(`${commentsIp}/api/songs/${songId}`)
-  .then(data => res.send(data.data))
-  .catch(err => {
-    console.log('ERROR RETRIEVING COMMENTS FOR SONG', err)
-    res.send(err);
-  })
-})
+  limit = Number(limit);
+  const request = `${commentsIP}/api/songs/${songId}?page=${page}&limit=${limit}&join=false`;
+  axios
+    .get(request)
+    .then((response) => {
+      const data = response.data;
+      console.log(data);
+      res.send(data);
+    })
+    .catch((err) => {
+      console.log(err);
+    });
+});
 
 app.use(express.static(path.join(__dirname, './dist')));
 
