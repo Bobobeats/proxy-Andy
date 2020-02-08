@@ -50,7 +50,7 @@ app.get('/api/relatedTracks/songs/:songId', (req, res) => {
 })
 
 app.get('/comments_bundle', (req, res) => {
-  axios.get(`${commentsIp}/relatedTracks_bundle`)
+  axios.get(`${commentsIp}/comments_bundle`)
   .then(data => res.send(data.data))
   .catch(err => {
     console.log('ERROR RETRIEVING COMMENTS BUNDLE FOR SONG', err)
@@ -60,7 +60,7 @@ app.get('/comments_bundle', (req, res) => {
 
 app.get('/api/comments/songs/:songId', (req, res) => {
   const { songId } = req.params;
-  axios.get(`${commentsIp}/api/comments/songs/${songId}`)
+  axios.get(`${commentsIp}/api/songs/${songId}`)
   .then(data => res.send(data.data))
   .catch(err => {
     console.log('ERROR RETRIEVING COMMENTS FOR SONG', err)
