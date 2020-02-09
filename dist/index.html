@@ -4,18 +4,19 @@
     <title>Andy Proxy Server</title>
   </head>
   <body>
-    <div class='navbar'>
-      <img src='navbar.png' >
-    </div>
-    <div id="player"></div>
-    <div id="comment" style="display: inline-flex">Root is here</div>
-    <div class='sidebar' style="display: inline-flex; float: right; border-left-color: 1px solid #D3D3D3;">
-      <div id='relatedTracks'></div>
-      <div>
-        <img src='sidebar.png'>
+    <div class='app' style="text-align: center;">
+      <div class='navbar' style="background-image: url('navbar.png'); background-size: cover; background-repeat: no-repeat; height: 48px; padding: 0px; margin: 0px; ">
+      </div>
+      <div class='songPage' style='max-width: 1240px; text-align: center; margin-left: 16%; margin-right: 16%'>
+        <div id="player"></div>
+        <div id="comment" style="display: inline-flex">Root is here</div>
+        <div class='sidebar' style="display: flex; flex-direction: column; float: right; border-left-color: #D3D3D3;">
+          <div id='relatedTracks'></div>
+          <div>
+            <img src='sidebar.png'>
+          </div>
       </div>
     </div>
-
     <script src='/player_bundle'></script>
     <script src='/relatedTracks_bundle'></script>
     <script src='/comments_bundle'></script>
