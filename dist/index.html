@@ -4,11 +4,16 @@
     <title>Andy Proxy Server</title>
   </head>
   <body>
-    <img src='navbar.png'>
+    <div class='navbar'>
+      <img src='navbar.png' >
+    </div>
     <div id="player"></div>
     <div id="comment" style="display: inline-flex">Root is here</div>
-    <div id='relatedTracks' style="display: inline-flex; float: right"></div>
-    <img src='sidebar.png'>
+    <div class='sidebar' style="display: inline-flex; float: right; border-left-color: 1px solid #D3D3D3;">
+      <div id='relatedTracks'></div>
+      <img src='sidebar.png'>
+    </div>
+
     <script src='/player_bundle'></script>
     <script src='/relatedTracks_bundle'></script>
     <script src='/comments_bundle'></script>
